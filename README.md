@@ -1,7 +1,10 @@
 j5g3.demo
 =========
 
-To see a demo go to 
+HTML5 Canvas and WebGL demos.
 
-https://j5g3.github.io/demo#folder_name
+Demos
+-----
+
+[Parallax](https://j5g3.github.io/demo#parallax)
 
