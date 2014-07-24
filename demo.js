@@ -10,6 +10,7 @@ var
 
 		startFn: function() {
 			$input = new j5g3.in(this.stage.canvas);
+			this.stage.container.className = 'j5g3-stage-full';
 			this.background = this.layer({ background: true });
 			this.stage.add($loading);
 		}
