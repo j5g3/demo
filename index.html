@@ -13,30 +13,42 @@
 		</optgroup>
 		<optgroup label="j5g3">
 			<option>clock</option>
+			<option>life</option>
 		</optgroup>
 		</select>
+		<label><input id="debug" type="checkbox"> Debug</label>
 	</div>
 	<iframe id="iframe"></iframe>
 	<script>
+	(function() {
 	var
 		hash = location.hash.substr(1),
 		demo = document.getElementById('demo'),
+		debug = document.getElementById('debug'),
 		iframe = document.getElementById('iframe'),
-		option
+		option, rand
 	;
-		demo.onchange = function()
+		debug.onchange = demo.onchange = function()
 		{
 			option = demo.options[demo.selectedIndex] || demo.options[0];
 			location.hash = demo.value;
-			iframe.src = (option.hasAttribute('compiled') ?
-				'compiled.html#' :
-				'demo.html#') + demo.value;
+			rand = Date.now();
+			
+			if (debug.checked)
+				iframe.src = (option.hasAttribute('compiled') ?
+					demo.value + '/debug.html?' : 
+					'demo_debug.html?') + rand + '#' + demo.value;
+			else
+				iframe.src = (option.hasAttribute('compiled') ?
+					'compiled.html#' :
+					'demo.html#') + demo.value;
 		}
 		
 		if ((/\w+/).test(hash))
 			demo.value = hash;
 			
 		demo.onchange();
+	})();
 	</script>
 
   </body>

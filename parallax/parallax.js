@@ -26,5 +26,4 @@ $loading.on_remove = function() {
 
 };
 
-$engine.fps = 60;
 $engine.run();

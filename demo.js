@@ -10,7 +10,7 @@ var
 		stage: new j5g3.StageDirty({ width: 1280, height: 720 }),
 
 		startFn: function() {
-			$input = new j5g3.in({ element: this.stage.canvas, interval: 15 });
+			$input = new j5g3.in(this.stage.canvas);
 			this.stage.container.className = 'j5g3-stage-full';
 			this.background = this.layer({ background: true });
 			this.stage.add($loading);
