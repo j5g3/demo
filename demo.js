@@ -2,7 +2,7 @@
 var
 	j5g3 = window.j5g3,
 	$loader = j5g3.loader(),
-	$loading = new j5g3.gdk.Loading({ loader: $loader, x: 640, y: 360 }),
+	$loading = new j5g3.gdk.Loading({ loader: $loader }),
 	$input,
 
 	$engine = j5g3.engine({

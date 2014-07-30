@@ -37,5 +37,4 @@ var
 		}
 	}
 	$engine.background.canvas.style.backgroundColor = '#fff';
-	$engine.run();
 };

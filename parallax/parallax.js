@@ -12,14 +12,14 @@ $loading.on_remove = function() {
 
 	parallax = new j5g3.gdk.Parallax({
 		layers: [
-			j5g3.image(fg1).set({ y: 215, f: 0.7 }),
-			j5g3.image(fg2).set({ y: 16, f: 1 })
+			j5g3.image(fg1).set({ y: 215, fx: 0.7, fy: 1 }),
+			j5g3.image(fg2).set({ y: 16, fx: 1, fy: 1 })
 		]
 	});
 
 	$input.on({
-		left: function() { parallax.cx += 30; $engine.stage.invalidate(); },
-		right: function() { parallax.cx -= 30; $engine.stage.invalidate(); }
+		left: function() { parallax.ox += 30; parallax.invalidate(); },
+		right: function() { parallax.ox -= 30; parallax.invalidate(); }
 	});
 
 	$engine.stage.add(parallax).invalidate();
