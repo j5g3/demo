@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>j5g3 Demo Launcher</title>
+	<link rel="stylesheet" href="//giancarlo.github.io/j5g3/build/j5g3.css" />
+	<script src="//giancarlo.github.io/j5g3/build/j5g3-all.dbg.js"></script>
+	<script src="//j5g3.github.io/in/build/j5g3-in-all.js"></script>
+	<script src="j5g3-gdk.min.js"></script>
+</head>
+<body>
+	<script src="demo.js"></script>
+	<script>
+	var
+		demo = location.hash.substr(1)
+	;
+		
+		if ((/\w+/).test(demo))
+		{
+			document.write('<script src="demo/' + demo + '.js"><\/script>');
+			
+			j5g3.ready($engine.run.bind($engine));
+		}
+	</script>
+</body>
+</html>

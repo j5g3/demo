@@ -5,7 +5,6 @@
 	<link rel="stylesheet" href="demo.css" />
 </head>
 <body>
-
 	<div>
 		<select id="demo">
 		<optgroup label="gdk">
@@ -29,8 +28,8 @@
 			option = demo.options[demo.selectedIndex] || demo.options[0];
 			location.hash = demo.value;
 			iframe.src = (option.hasAttribute('compiled') ?
-				'compiled.html#' :
-				'demo.html#') + demo.value;
+				demo.value + '/debug.html#' :
+				'demo_debug.html#') + demo.value;
 		}
 		
 		if ((/\w+/).test(hash))
