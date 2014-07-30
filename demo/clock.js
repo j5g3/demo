@@ -14,13 +14,14 @@ var
 	bb = j5g3.rect({
 
 		fill: '#66e',
+		stroke: false,
 		alpha: 0.5,
 
-		paint: function(ctx, bb)
+		validate: function(bb, M)
 		{
 			this.x = bb.x; this.y = bb.y;
 			this.width = bb.w; this.height = bb.h;
-			j5g3.Rect.prototype.paint.call(this, ctx);
+			j5g3.DisplayObject.prototype.validate.call(this, bb, M, true);
 		}
 
 	}),
@@ -37,6 +38,8 @@ var
 		hour.rotation = pi + pi / 6  * _hours;
 		mins.rotation = pi + pi / 30 * _mins;
 		secs.rotation = pi + pi / 30 * _secs;
+
+		$engine.stage.invalidate();
 	},
 
 	hour  = j5g3.image({ source: resources.hour, cx: -10, cy: -210, sy: -1 }),
@@ -45,8 +48,8 @@ var
 ;
 	$engine.background.add([
 		j5g3.rect({ fill: '#fff', width: 1280, height: 720 }),
-		j5g3.line({ line_width: 1, fill: '#000', stroke: '#000', x: 1280/2, y: 0, x2: 0, y2: 720 }),
-		j5g3.line({ line_width: 1, fill: '#000', stroke: '#000', x: 0, y: 360, x2: 1280, y2: 0 })
+		j5g3.line({ line_width: 1, stroke: '#000', x: 1280/2, y: 0, height: 720 }),
+		j5g3.line({ line_width: 1, stroke: '#000', x: 0, y: 360, width: 1280 })
 	]);
 
 	$engine.stage.add([ hour, mins, secs, update, bb ])

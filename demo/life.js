@@ -9,14 +9,16 @@ var
 	MINLIGHT = 30,
 	MAXLIGHT = 100,
 
-	W = $engine.stage.width / COLS,
-	H = $engine.stage.height / ROWS,
+	W = $engine.stage.width / COLS | 0,
+	H = $engine.stage.height / ROWS | 0,
 
 	a, x, y,
 
 	map = j5g3.map({
 		map: j5g3.ary(COLS, ROWS, 0),
 		map2: j5g3.ary(COLS, ROWS, 0),
+		width: $engine.stage.width,
+		height: $engine.stage.height,
 		tw: W,
 		th: H,
 		sprites: [ null ]
