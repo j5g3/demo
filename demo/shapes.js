@@ -54,29 +54,40 @@ var
 	},
 
 	old,
-	coords = j5g3.text({ font: '30px sans-serif', fill: '#eee', y: 20, x: 20, height: 30, width: 300 }),
-
-	on_mouse = function()
-	{
-		coords.text = ($input.x|0) + ', ' + ($input.y|0);
-
-		if (old)
-		{
-			old.line_width = 1;
-			old.invalidate();
-			stage.canvas.style.cursor = '';
-		}
-
-		if ((old = stage.at($input.x, $input.y)))
-		{
-			old.line_width = 5;
-			old.invalidate();
-			stage.canvas.style.cursor = 'pointer';
-			coords.text += ', s: ' + old.sx.toFixed(1) + ', ' + old.sy.toFixed(1);
-		}
-		coords.invalidate();
-	}
+	coords = j5g3.text({ font: '30px sans-serif', fill: '#eee', y: 20, x: 20, height: 30, width: 300 })
 ;
+	function on_mouse()
+	{
+		var s = stage.at($input.x, $input.y);
+
+		coords.text = ($input.x|0) + ', ' + ($input.y|0);
+		coords.invalidate();
+
+		if (s)
+		{
+			if (s !== old)
+			{
+				s.line_width = 5;
+				s.invalidate();
+				stage.canvas.style.cursor = 'pointer';
+			}
+
+			coords.text += ', s: ' + s.sx.toFixed(1) + ', ' + s.sy.toFixed(1);
+		} else
+			stage.canvas.style.cursor = '';
+
+		if (s !== old)
+		{
+			if (old)
+			{
+				old.line_width = 1;
+				old.invalidate();
+			}
+
+			old = s;
+		}
+	}
+
 	for (i=0; i<MAX; i++)
 	{
 		p = create();

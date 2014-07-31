@@ -7,7 +7,7 @@ var
 
 	$engine = j5g3.engine({
 
-		stage: new j5g3.StageDirty({ width: 1280, height: 720 }),
+		stage_settings: { width: 1280, height: 720 },
 
 		startFn: function() {
 			this.stage.container.className = 'j5g3-stage-full';

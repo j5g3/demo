@@ -20,6 +20,7 @@
 			<option>easing</option>
 			<option>life</option>
 			<option>shapes</option>
+			<option>isometric</option>
 		</optgroup>
 		</select>
 		<label><input id="debug" type="checkbox"> Debug</label>
@@ -48,8 +49,8 @@
 					'demo_debug.html?') + rand + '#' + demo.value;
 			else
 				iframe.src = (option.hasAttribute('compiled') ?
-					'compiled.html#' :
-					'demo.html#') + demo.value;
+					'compiled.html?' :
+					'demo.html?') + rand + '#' + demo.value;
 		}
 		
 		if ((/\w+/).test(hash))

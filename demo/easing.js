@@ -12,9 +12,10 @@ var
 	x = 0,
 	a, easing,
 	// Create a container for text
-	text = j5g3.clip({ fill: '#000' })
+	text = j5g3.clip({ fill: '#000' }),
+	bg = j5g3.rect({ stroke: false, fill: '#fff', width: $engine.stage.width, height: $engine.stage.height })
 ;
-	$engine.background.add(text).scale(SCALE);
+	$engine.background.add([ bg, text ]).scale(SCALE);
 	$engine.stage.scale(SCALE);
 
 	// Create clip, tween and text for each Easing function
@@ -36,5 +37,4 @@ var
 			y = -10; x += 330; to = { x: 600 };
 		}
 	}
-	$engine.background.canvas.style.backgroundColor = '#fff';
 };
