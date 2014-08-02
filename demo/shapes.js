@@ -40,7 +40,6 @@ var
 			sy: j5g3.rand(3),
 			cx: -10 + j5g3.rand(20),
 			cy: -10 + j5g3.rand(20),
-			line_width: 1,
 			stroke: get_color(),
 			rotation: j5g3.rand(Math.PI*2)
 		};
@@ -54,7 +53,7 @@ var
 	},
 
 	old,
-	coords = j5g3.text({ font: '30px sans-serif', fill: '#eee', y: 20, x: 20, height: 30, width: 300 })
+	coords = j5g3.text({ font: '30px sans-serif', fill: '#eee', y: 20, x: 20, height: 30, width: 330 })
 ;
 	function on_mouse()
 	{
