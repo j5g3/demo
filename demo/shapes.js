@@ -53,7 +53,7 @@ var
 	},
 
 	old,
-	coords = j5g3.text({ font: '30px sans-serif', fill: '#eee', y: 20, x: 20, height: 30, width: 330 })
+	coords = j5g3.text({ font: '30px sans-serif', fill: '#eee', y: 20, x: 20, height: 50, width: 330 })
 ;
 	function on_mouse()
 	{

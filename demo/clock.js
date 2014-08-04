@@ -11,20 +11,6 @@ var
 		sec: j5g3.dom.image("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAADwCAMAAAA3grSrAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF/wAAAAAAQaMSAwAAAAJ0Uk5T/wDltzBKAAAAUklEQVR42uzYMQoAIAxD0fT+lxbEoUJwaEFEfsY3BZqpChMVUAJBEARBEARBEATBv1AzO0pZtdnSy2gr+fKcGDyj3VIT/RQfxEhWwe5vLWUIMABZGRBta6PNxwAAAABJRU5ErkJggg==")
 
 	},
-	bb = j5g3.rect({
-
-		fill: '#66e',
-		stroke: false,
-		alpha: 0.5,
-
-		validate: function(bb, M)
-		{
-			this.x = bb.x; this.y = bb.y;
-			this.width = bb.w; this.height = bb.h;
-			j5g3.DisplayObject.prototype.validate.call(this, bb, M, true);
-		}
-
-	}),
 
 	update = function()
 	{
@@ -52,7 +38,7 @@ var
 		j5g3.line({ line_width: 1, stroke: '#000', x: 0, y: 360, width: 1280 })
 	]);
 
-	$engine.stage.add([ hour, mins, secs, update, bb ])
+	$engine.stage.add([ hour, mins, secs, update ])
 		.align_children('center middle')
 	;
 };

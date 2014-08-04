@@ -20,8 +20,12 @@ var
 			.scale(0.4, 0.4)
 		;
 
-		clip.source = ([diamond, star])[j5g3.irand(2)];
-		clip.stroke= ([ 'white', 'red', 'yellow', 'cyan' ])[j5g3.irand(4)];
+		if (clip.shape)
+		{
+			clip.fill= false;
+			clip.stroke= ([ 'white', 'red', 'yellow', 'cyan' ])[j5g3.irand(4)];
+		} else
+			clip.source = ([diamond, star])[j5g3.irand(2)];
 		clip.rotation = j5g3.rand(3);
 
 		this.parent.add(j5g3.tween({

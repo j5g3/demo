@@ -3,6 +3,7 @@
 <head>
 	<title>j5g3 Demo Launcher</title>
 	<link rel="stylesheet" href="../j5g3/build/j5g3.css" />
+	<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="../j5g3/build/j5g3-all.dbg.js"></script>
 	<script src="../j5g3-in/build/j5g3-in-all.js"></script>
 	<script src="j5g3-gdk.min.js"></script>
@@ -20,6 +21,7 @@
 		document.write('<script src="demo/' + demo + '.js"><\/script>');
 		
 		j5g3.ready(function() {
+			j5g3.dbg.attachToolbar($engine);
 			$engine.run();
 		});
 	}
