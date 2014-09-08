@@ -32,14 +32,13 @@ var
 
 		// Set map array
 		map.map = j5g3.ary(MAP_WIDTH, MAP_HEIGHT, 0);
-		// Set map size based on number of rows and cols
-		map.size(MAP_WIDTH*map.tw-map.tw, (MAP_HEIGHT-2)*map.th/2)
-			.stretch(stage.width, stage.height)
-		;
-		// Center Map
 		map.x = -map.tw*map.sx;
 		map.y = -map.th/2*map.sy;
-
+		// Set map size based on number of rows and cols
+		map.size(MAP_WIDTH*map.tw-map.tw, (MAP_HEIGHT-2)*map.th/2)
+			.stretch(stage.width-map.x, stage.height-map.y)
+		;
+		// Center Map
 		// Start expanding
 		expand(points);
 	}

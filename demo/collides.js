@@ -19,7 +19,7 @@ var
 
 			j5g3.text({
 				x: 180,
-				y: a.y+a.height/2+5,
+				y: a.y+5,
 				text: coll.query(a, b) ? 'Collision' : 'No Collision',
 				font: '20px Arial', fill: 'white'
 			})
@@ -36,7 +36,7 @@ var
 				}),
 				j5g3.text({
 					x: 500,
-					y: a.y+a.height/2+5,
+					y: a.y+5,
 					text: coll ? (a.collides(b).collides ? 'Not Resolved' : 'Resolved') : '',
 					font: '20px Arial', fill: 'white'
 				})
@@ -58,10 +58,12 @@ var
 
 	do_test({ x: 100, y: 10 });
 	do_test({ x: 40, y: 30 });
-//	do_test({ x: 20, y: 340, sx: 0.5 }, { x: 100, y: 350 });
-//	do_test({ x: 20, y: 420 }, { x: 100, y: 430, sx: 0.5 });
+	/*
+	do_test({ x: 20, y: 340, sx: 0.5 }, { x: 100, y: 350 });
+	do_test({ x: 20, y: 420 }, { x: 100, y: 430, sx: 0.5 });
 
-//	do_test({ x: 320, y: 20 }, { x: 400, y: 30, sx: -2 });
-//	do_test({ x: 320, y: 100, sx: 0.3 }, { x: 400, y: 110, sx: -1 });
-//	do_test({ x: 320, y: 180, sx: 0.5 }, { x: 400, y: 190, sx: -0.5 });
+	do_test({ x: 320, y: 20 }, { x: 400, y: 30, sx: -2 });
+	do_test({ x: 320, y: 100, sx: 0.3 }, { x: 400, y: 110, sx: -1 });
+	do_test({ x: 320, y: 180, sx: 0.5 }, { x: 400, y: 190, sx: -0.5 });
+	*/
 });

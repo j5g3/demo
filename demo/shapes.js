@@ -16,11 +16,12 @@ var
 		target: null,
 		alpha: 0.5,
 
-		validate: function(bb, M, force)
+		validate: function(bb, force)
 		{
 			this.x = this.target.x; this.y = this.target.y;
 			this.width = this.target.w; this.height = this.target.h;
-			j5g3.Rect.prototype.validate.call(this, bb, M, force);
+
+			j5g3.Rect.prototype.validate.call(this, bb, force);
 		}
 
 	}),
@@ -93,9 +94,8 @@ var
 		stage.add(p[0]);
 		$engine.background.add(p[1]);
 	}
-	$engine.background.add(coords).invalidate();
-
+	$engine.background.add(coords);
 	$input.on({ move: on_mouse });
 
-	stage.scale(0.7, 0.7).pos(100,50).invalidate();
+	stage.scale(0.7, 0.7).pos(100,50);
 });
