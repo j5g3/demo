@@ -30,8 +30,6 @@ var
 			this.y += this.vy;
 			this.rotation = (this.rotation > 2*Math.PI) ? 0 : this.rotation + 0.1;
 
-			this.dirty = true;
-
 			if (this.x < 0) {
 				this.x = 0;
 				this.vx = -this.vx;

@@ -8,7 +8,7 @@ var
 
 $loading.on_remove = function() {
 
-	$engine.background.add(bg).invalidate();
+	$engine.background.add(bg);
 
 	parallax = new j5g3.gdk.Parallax({
 		layers: [
@@ -18,11 +18,11 @@ $loading.on_remove = function() {
 	});
 
 	$input.on({
-		left: function() { parallax.ox += 30; parallax.invalidate(); },
-		right: function() { parallax.ox -= 30; parallax.invalidate(); }
+		left: function() { parallax.ox += 30; },
+		right: function() { parallax.ox -= 30; }
 	});
 
-	$engine.stage.add(parallax).invalidate();
+	$engine.stage.add(parallax);
 
 };
 

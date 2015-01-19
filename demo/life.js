@@ -55,8 +55,6 @@ var
 		a = map.map;
 		map.map = map.map2;
 		map.map2 = a;
-
-		$engine.stage.invalidate();
 	}
 ;
 

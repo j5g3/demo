@@ -55,7 +55,7 @@ var
 	// Create States. Each frame in the ninja object is a state
 	for (state in states)
 	{
-		clip = j5g3.clip({ y: 150, x: x, st: 0.2 }).scale(2).remove_frame();
+		clip = j5g3.clip({ y: 150, x: x }).scale(2).remove_frame();
 		states[state].forEach(add_frames);
 		clip.go(0);
 		$engine.stage.add(clip);

@@ -24,8 +24,6 @@ var
 		hour.rotation = pi + pi / 6  * _hours;
 		mins.rotation = pi + pi / 30 * _mins;
 		secs.rotation = pi + pi / 30 * _secs;
-
-		$engine.stage.invalidate();
 	},
 
 	hour  = j5g3.image({ source: resources.hour, cx: -10, cy: -210, sy: -1 }),

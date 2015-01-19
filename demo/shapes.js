@@ -61,14 +61,12 @@ var
 		var s = stage.at($input.x, $input.y);
 
 		coords.text = ($input.x|0) + ', ' + ($input.y|0);
-		coords.invalidate();
 
 		if (s)
 		{
 			if (s !== old)
 			{
 				s.line_width = 5;
-				s.invalidate();
 				stage.canvas.style.cursor = 'pointer';
 			}
 
@@ -81,7 +79,6 @@ var
 			if (old)
 			{
 				old.line_width = 1;
-				old.invalidate();
 			}
 
 			old = s;

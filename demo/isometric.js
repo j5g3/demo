@@ -83,8 +83,6 @@ var
 		// Recursive call after the delay. The function will exit before calling the next one.
 		if (pts.length)
 			timeout = setTimeout(function() { expand(pts); }, DELAY);
-		// Paint
-		stage.invalidate();
 	}
 
 	function cut(obj)

@@ -58,8 +58,7 @@ var
 
 		map.map = result;
 		map.size(map.tw*x, map.th*y)
-			.stretch($engine.stage.width, $engine.stage.height)
-			.invalidate();
+			.stretch($engine.stage.width, $engine.stage.height);
 	}
 
 	$loader.ready(generate);

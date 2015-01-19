@@ -50,7 +50,6 @@ var
 			text.text = 'Cache Enabled';
 		}
 
-		text.invalidate();
 		cache = !cache;
 	}
 
